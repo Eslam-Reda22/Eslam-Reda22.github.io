@@ -50,6 +50,8 @@
 
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
   .card { border: 1px solid var(--line); border-radius: 12px; padding: 18px; background: var(--bg); }
+  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+  .gallery img { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 8px; }
   .thumb { height: 150px; border-radius: 8px; background: var(--soft); display: flex; align-items: center; justify-content: center; font-size: 13px; color: var(--muted); }
   .card h3 { font-size: 17px; margin-top: 16px; }
   .card p { font-size: 14px; color: var(--muted); margin-top: 6px; }
@@ -137,7 +139,12 @@
       </p>
       <div class="grid">
         <article class="card">
-          <div class="thumb"><span class="en">project screenshot</span><span class="ar">صورة المشروع</span></div>
+          <div class="gallery">
+            <img src="klyff-shop-desktop.png" alt="KLYFF shop page on desktop">
+            <img src="klyff-home-mobile.png" alt="KLYFF reveal page on mobile">
+            <img src="klyff-drops-admin.png" alt="KLYFF admin panel managing drops and stages">
+            <img src="klyff-delivery-admin.png" alt="KLYFF admin panel setting delivery fees per governorate">
+          </div>
           <h3>KLYFF</h3>
           <p>
             <span class="en">Online store for an Egyptian clothing brand with timed drops: teasers and a countdown, then a reveal when the collection opens. Customers can create accounts, track orders, and pay on delivery. The admin panel manages products, stock, delivery fees per governorate, and courier connections.</span>
