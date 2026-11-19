@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+
+
+<title>KLYFF — QUIET LINES. PRECISE STRUCTURE</title>
+<!-- klyff:head -->
+<meta name="description" content="KLYFF is a contemporary fashion house built on fluid minimalism and architectural weight. Quiet lines, precise structure, delivered across Egypt.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KLYFF">
+<meta property="og:title" content="KLYFF — QUIET LINES. PRECISE STRUCTURE">
+<meta property="og:description" content="KLYFF is a contemporary fashion house built on fluid minimalism and architectural weight. Quiet lines, precise structure, delivered across Egypt.">
+<meta property="og:image" content="%SITE_URL%/social/og-image-1200x630.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="%SITE_URL%/">
+<link rel="canonical" href="%SITE_URL%/">
+<link rel="apple-touch-icon" href="favicon/apple-touch-icon-180.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#0E0E0E">
+<!-- /klyff:head -->
+
+<link rel="icon" type="image/svg+xml" href="favicon/KLYFF_favicon-svg-any-size_dark.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16.png">
+<link rel="stylesheet" href="customer.css">
+
+
+
+<script src="klyff-storage.js"></script>
+</head>
+
+<body id="home" data-stage="build">
+
+<!-- Intro: the KLYFF icon on Ink, once per browser session. CSS hides it after the intro, so the page shows even without JavaScript. -->
+<div class="intro" id="intro" aria-hidden="true">
+    <img class="intro-icon" src="favicon/KLYFF_intro-icon.svg" alt="">
+</div>
+<script src="index-inline.js"></script>
+
+<div class="stage-bg" aria-hidden="true"></div>
+<div class="stage-shade" aria-hidden="true"></div>
+<div class="stage-grain" aria-hidden="true"></div>
+
+
+<header>
+
+    <div class="header-left">
+
+        <button
+            type="button"
+            class="menu-button"
+            id="menu-button"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
+
+            <svg
+                class="menu-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+            >
+                <line x1="4" y1="7" x2="20" y2="7"></line>
+                <line x1="4" y1="12" x2="20" y2="12"></line>
+                <line x1="4" y1="17" x2="20" y2="17"></line>
+            </svg>
+
+        </button>
+
+        <button type="button" class="header-search" id="search-open" aria-label="Search products" title="Search products" aria-expanded="false" aria-controls="product-search">
+
+            <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+            >
+                <circle cx="11" cy="11" r="6.5"></circle>
+
+                <line
+                    x1="16"
+                    y1="16"
+                    x2="21"
+                    y2="21"
+                ></line>
+
+            </svg>
+
+        </button>
+
+    </div>
+
+    <a
+        href="#home"
+        class="logo"
+    >
+        <img class="logo-text" src="svg/KLYFF_wordmark_ink.svg" alt="KLYFF" width="153" height="22">
+    </a>
+
+    <div class="header-cart">
+
+        <a
+            href="cart.html"
+            class="cart-link"
+            aria-label="Shopping Cart"
+            title="Shopping Cart"
+        >
+
+            <svg
+                class="cart-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+            >
+                <path d="M5 7h14l-1 12H6L5 7Z"></path>
+
+                <path d="M9 7a3 3 0 0 1 6 0"></path>
+
+            </svg>
+
+            <span class="cart-count">
+                0
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+<!-- ========================================
+     SLIDE MENU
+======================================== -->
+
+<div
+    class="klyff-menu-overlay"
+    id="klyff-menu-overlay"
+></div>
+
+<aside
+    class="klyff-menu"
+    id="klyff-menu"
+    aria-hidden="true"
+>
+
+    <button
+        type="button"
+        class="klyff-menu-close"
+        id="klyff-menu-close"
+        aria-label="Close menu"
+    >
+        ×
+    </button>
+
+    <a href="shop.html">
+        Shop
+    </a>
+
+    <a href="#about">
+        About
+    </a>
+
+    <a href="policy.html">
+        Store Information
+    </a>
+
+    <a href="#contact">
+        Contact
+    </a>
+
+    <a href="order-search.html">Track order</a>
+
+    <a href="account.html">
+        Account
+    </a>
+
+</aside>
+
+<main>
+
+    <!-- ========================================
+         DROP STAGES
+         Only the section matching <body data-stage> is visible.
+     ======================================== -->
+    <section class="stage stage-build">
+        <p class="eyebrow">01 — BUILD-UP</p>
+        <h2 class="stage-title">QUIET LINES.<br>PRECISE STRUCTURE.</h2>
+        <p class="stage-text">KLYFF is a contemporary fashion house built on fluid minimalism and architectural weight. Details unlock as the countdown moves.</p>
+        <div class="stage-countdown" role="timer" aria-label="Time until launch">
+            <div><b id="cd-d">00</b><span>DAYS</span></div>
+            <div><b id="cd-h">00</b><span>HRS</span></div>
+            <div><b id="cd-m">00</b><span>MIN</span></div>
+            <div><b id="cd-s">00</b><span>SEC</span></div>
+        </div>
+        <p class="stage-soon" id="cd-soon"></p>
+        <div class="stage-teasers" id="stage-teasers"></div>
+        <form class="stage-notify" data-notify-form novalidate>
+            <label class="stage-notify-label" for="notify-email-2">GET AN EMAIL THE MOMENT IT'S LIVE</label>
+            <div class="stage-notify-row">
+                <input class="stage-notify-input" id="notify-email-2" type="email" name="email" placeholder="you@example.com" autocomplete="email" inputmode="email" required>
+                <button type="submit" class="stage-button">NOTIFY ME AT LAUNCH</button>
+            </div>
+            <input class="stage-notify-trap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p class="stage-notify-message" role="status" aria-live="polite"></p>
+        </form>
+    </section>
+
+    <section class="stage stage-reveal">
+        <p class="eyebrow">02 — REVEAL</p>
+        <h2 class="stage-title">QUIET LINES.<br>PRECISE STRUCTURE.</h2>
+        <p class="stage-text">Structured form, fluid drape. The collection is live.</p>
+        <div class="pc-grid" data-klyff-products data-limit="3" data-spread></div>
+        <a class="stage-button" href="shop.html">SHOP COLLECTION</a>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section
+        class="about"
+        id="about"
+    >
+
+        <p class="eyebrow">
+            THE KLYFF PHILOSOPHY
+        </p>
+
+        <h2>
+    FLUID MINIMALISM.<br>ARCHITECTURAL WEIGHT.
+</h2>
+
+<p>
+    KLYFF is a contemporary fashion house built on the ledge, the drop and the open horizon. Clean vertical structure meets fabric that moves with the body. We avoid trends and loud labels, and build each piece around precision and restraint.
+</p>
+
+    </section>
+
+    
+    <!-- CONTACT -->
+
+    <section
+        class="contact"
+        id="contact"
+    >
+
+        <p class="eyebrow">
+            GET IN TOUCH
+        </p>
+
+        <h2>
+            Let's talk.
+        </h2>
+
+        <p>
+            Have a question about KLYFF or our collection?
+            We'd love to hear from you.
+        </p>
+
+        <a href="mailto:klyffeg@gmail.com">
+            klyffeg@gmail.com
+        </a>
+
+        <a href="tel:+201026867250">
+            +20 10 26867250
+        </a>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 KLYFF. All rights reserved.
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+
+<script src="index-inline-2.js"></script>
+
+
+<script src="slideshow.js"></script>
+<script src="size-guide.js"></script>
+<script src="shop.js"></script>
+<script src="index-inline-3.js"></script>
+
+<script src="search.js"></script>
+</body>
+
+</html>
