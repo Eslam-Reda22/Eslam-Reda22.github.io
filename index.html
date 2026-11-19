@@ -1,313 +1,299 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html lang="en" data-lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eslam Reda | E-commerce Web Developer</title>
+<style>
+  :root {
+    --text: #1a1a1a;
+    --muted: #5c5f66;
+    --line: #e5e5e5;
+    --bg: #ffffff;
+    --soft: #f7f7f5;
+    --accent: #16a34a;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  html[data-lang="ar"] body { font-family: "Noto Sans Arabic", Tahoma, "Segoe UI", sans-serif; }
+  html[data-lang="ar"] .hero h1, html[data-lang="ar"] h2 { font-family: "Noto Naskh Arabic", "Noto Sans Arabic", Tahoma, serif; }
+  html:not([data-lang="ar"]) .ar, html[data-lang="ar"] .en { display: none; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); color: var(--text); background: var(--bg); line-height: 1.6; }
+  a { color: inherit; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 
+  header { border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--bg); z-index: 10; }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; height: 60px; gap: 12px; }
+  .logo { font-family: var(--mono); font-size: 15px; text-decoration: none; }
+  .logo span { color: var(--accent); }
+  nav { display: flex; align-items: center; gap: 18px; }
+  nav a { font-size: 14px; color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--text); }
+  .lang { font-size: 13px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); cursor: pointer; color: var(--text); }
 
-<title>KLYFF — QUIET LINES. PRECISE STRUCTURE</title>
-<!-- klyff:head -->
-<meta name="description" content="KLYFF is a contemporary fashion house built on fluid minimalism and architectural weight. Quiet lines, precise structure, delivered across Egypt.">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="KLYFF">
-<meta property="og:title" content="KLYFF — QUIET LINES. PRECISE STRUCTURE">
-<meta property="og:description" content="KLYFF is a contemporary fashion house built on fluid minimalism and architectural weight. Quiet lines, precise structure, delivered across Egypt.">
-<meta property="og:image" content="%SITE_URL%/social/og-image-1200x630.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta property="og:url" content="%SITE_URL%/">
-<link rel="canonical" href="%SITE_URL%/">
-<link rel="apple-touch-icon" href="favicon/apple-touch-icon-180.png">
-<link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#0E0E0E">
-<!-- /klyff:head -->
+  .hero { padding: 80px 0 64px; }
+  .label { font-family: var(--mono); font-size: 13px; color: var(--accent); }
+  html[data-lang="ar"] .label { font-family: var(--sans); }
+  .hero h1 { font-family: var(--serif); font-size: clamp(32px, 5vw, 46px); line-height: 1.15; margin-top: 12px; max-width: 760px; }
+  .hero p { font-size: 17px; color: var(--muted); margin-top: 18px; max-width: 640px; }
+  .btns { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { font-size: 14px; padding: 10px 18px; border-radius: 6px; text-decoration: none; border: 1px solid var(--line); display: inline-block; }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn:hover { opacity: .9; }
 
-<link rel="icon" type="image/svg+xml" href="favicon/KLYFF_favicon-svg-any-size_dark.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16.png">
-<link rel="stylesheet" href="customer.css">
+  section { padding: 64px 0; border-top: 1px solid var(--line); }
+  h2 { font-family: var(--serif); font-size: 28px; margin-bottom: 8px; }
+  .section-sub { font-size: 15px; color: var(--muted); margin-bottom: 32px; }
 
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .card { border: 1px solid var(--line); border-radius: 12px; padding: 18px; background: var(--bg); }
+  .thumb { height: 150px; border-radius: 8px; background: var(--soft); display: flex; align-items: center; justify-content: center; font-size: 13px; color: var(--muted); }
+  .card h3 { font-size: 17px; margin-top: 16px; }
+  .card p { font-size: 14px; color: var(--muted); margin-top: 6px; }
+  .status { display: inline-block; margin-top: 12px; font-family: var(--mono); font-size: 11px; color: #92400e; background: #fef3c7; padding: 3px 8px; border-radius: 4px; }
+  html[data-lang="ar"] .status { font-family: var(--sans); }
+  .tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .tags span { font-family: var(--mono); font-size: 11px; padding: 3px 8px; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); }
 
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .skills h4 { font-family: var(--mono); font-size: 13px; color: var(--accent); margin-bottom: 10px; font-weight: 500; }
+  html[data-lang="ar"] .skills h4 { font-family: var(--sans); }
+  .skills ul { list-style: none; font-size: 15px; color: var(--muted); }
+  .skills li { padding: 4px 0; }
 
-<script src="klyff-storage.js"></script>
+  .about p { font-size: 16px; color: var(--muted); max-width: 680px; margin-bottom: 14px; }
+
+  .region { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .region div { border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+  .region h4 { font-size: 15px; margin-bottom: 6px; }
+  .region p { font-size: 14px; color: var(--muted); }
+
+  .cv { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; background: var(--soft); border-radius: 12px; padding: 24px; }
+  .cv p { font-size: 15px; color: var(--muted); }
+
+  .contact .big { font-family: var(--serif); font-size: 26px; margin-top: 8px; }
+  html[data-lang="ar"] .contact .big { font-family: var(--sans); }
+  .contact .big a { color: var(--accent); text-decoration: none; }
+  .contact .meta { margin-top: 16px; font-size: 14px; display: flex; gap: 20px; flex-wrap: wrap; }
+  .contact .meta a { text-decoration: none; color: var(--accent); }
+  .contact .meta a:hover { text-decoration: underline; }
+
+  footer { border-top: 1px solid var(--line); padding: 24px 0; font-size: 13px; color: var(--muted); }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  @media (max-width: 640px) {
+    nav a { font-size: 13px; }
+    nav { gap: 12px; }
+    .hero { padding: 56px 0 48px; }
+  }
+</style>
 </head>
-
-<body id="home" data-stage="build">
-
-<!-- Intro: the KLYFF icon on Ink, once per browser session. CSS hides it after the intro, so the page shows even without JavaScript. -->
-<div class="intro" id="intro" aria-hidden="true">
-    <img class="intro-icon" src="favicon/KLYFF_intro-icon.svg" alt="">
-</div>
-<script src="index-inline.js"></script>
-
-<div class="stage-bg" aria-hidden="true"></div>
-<div class="stage-shade" aria-hidden="true"></div>
-<div class="stage-grain" aria-hidden="true"></div>
-
+<body>
 
 <header>
-
-    <div class="header-left">
-
-        <button
-            type="button"
-            class="menu-button"
-            id="menu-button"
-            aria-label="Open menu"
-            aria-expanded="false"
-        >
-
-            <svg
-                class="menu-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-            >
-                <line x1="4" y1="7" x2="20" y2="7"></line>
-                <line x1="4" y1="12" x2="20" y2="12"></line>
-                <line x1="4" y1="17" x2="20" y2="17"></line>
-            </svg>
-
-        </button>
-
-        <button type="button" class="header-search" id="search-open" aria-label="Search products" title="Search products" aria-expanded="false" aria-controls="product-search">
-
-            <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-            >
-                <circle cx="11" cy="11" r="6.5"></circle>
-
-                <line
-                    x1="16"
-                    y1="16"
-                    x2="21"
-                    y2="21"
-                ></line>
-
-            </svg>
-
-        </button>
-
-    </div>
-
-    <a
-        href="#home"
-        class="logo"
-    >
-        <img class="logo-text" src="svg/KLYFF_wordmark_ink.svg" alt="KLYFF" width="153" height="22">
-    </a>
-
-    <div class="header-cart">
-
-        <a
-            href="cart.html"
-            class="cart-link"
-            aria-label="Shopping Cart"
-            title="Shopping Cart"
-        >
-
-            <svg
-                class="cart-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-            >
-                <path d="M5 7h14l-1 12H6L5 7Z"></path>
-
-                <path d="M9 7a3 3 0 0 1 6 0"></path>
-
-            </svg>
-
-            <span class="cart-count">
-                0
-            </span>
-
-        </a>
-
-    </div>
-
+  <div class="wrap">
+    <a class="logo" href="#top">eslam-reda<span>.</span></a>
+    <nav>
+      <a href="#work"><span class="en">Work</span><span class="ar">أعمالي</span></a>
+      <a href="#skills"><span class="en">Skills</span><span class="ar">المهارات</span></a>
+      <a href="#region"><span class="en">Regional</span><span class="ar">للسوق المحلي</span></a>
+      <a href="#about"><span class="en">About</span><span class="ar">نبذة</span></a>
+      <a href="#cv"><span class="en">CV</span><span class="ar">السيرة الذاتية</span></a>
+      <a href="#contact"><span class="en">Contact</span><span class="ar">تواصل</span></a>
+      <button class="lang" id="langToggle" type="button" aria-label="Switch language">
+        <span class="en">العربية</span><span class="ar">English</span>
+      </button>
+    </nav>
+  </div>
 </header>
 
-<!-- ========================================
-     SLIDE MENU
-======================================== -->
+<main id="top">
 
-<div
-    class="klyff-menu-overlay"
-    id="klyff-menu-overlay"
-></div>
+  <div class="wrap hero">
+    <div class="label"><span class="en">&gt; e-commerce web developer</span><span class="ar">مطوّر متاجر إلكترونية</span></div>
+    <h1>
+      <span class="en">Hi, I'm Eslam Reda. I build online stores that are fast, secure, and easy to run.</span>
+      <span class="ar">أهلاً، أنا إسلام رضا. أبني متاجر إلكترونية سريعة وآمنة وسهلة الإدارة.</span>
+    </h1>
+    <p>
+      <span class="en">I built KLYFF, a drop-based online store for an Egyptian clothing brand, from the storefront to the admin panel.</span>
+      <span class="ar">بنيت كلِيف، متجر إلكتروني بنظام الإصدارات المحدودة لعلامة ملابس مصرية، من الواجهة حتى لوحة التحكم.</span>
+    </p>
+    <div class="btns">
+      <a class="btn primary" href="#work"><span class="en">View project</span><span class="ar">شاهد المشروع</span></a>
+      <a class="btn" href="cv.pdf"><span class="en">Download CV</span><span class="ar">تحميل السيرة الذاتية</span></a>
+    </div>
+  </div>
 
-<aside
-    class="klyff-menu"
-    id="klyff-menu"
-    aria-hidden="true"
->
+  <section id="work">
+    <div class="wrap">
+      <h2><span class="en">Featured work</span><span class="ar">مشروع مميز</span></h2>
+      <p class="section-sub">
+        <span class="en">A project I built end to end, from the storefront to the admin panel.</span>
+        <span class="ar">مشروع بنيته من البداية إلى النهاية، من الواجهة حتى لوحة التحكم.</span>
+      </p>
+      <div class="grid">
+        <article class="card">
+          <div class="thumb"><span class="en">project screenshot</span><span class="ar">صورة المشروع</span></div>
+          <h3>KLYFF</h3>
+          <p>
+            <span class="en">Online store for an Egyptian clothing brand with timed drops: teasers and a countdown, then a reveal when the collection opens. Customers can create accounts, track orders, and pay on delivery. The admin panel manages products, stock, delivery fees per governorate, and courier connections.</span>
+            <span class="ar">متجر إلكتروني لعلامة ملابس مصرية بإصدارات محدودة بتوقيت: تلميحات وعداد تنازلي، ثم كشف المجموعة عند افتتاحها. يمكن للعملاء إنشاء الحسابات ومتابعة الطلبات والدفع عند الاستلام. وتدير لوحة التحكم المنتجات والمخزون ورسوم التوصيل لكل محافظة وربط شركات الشحن.</span>
+          </p>
+          <div class="tags"><span>Node.js</span><span>Express 5</span><span>SQLite</span><span>Google Sheets API</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    <button
-        type="button"
-        class="klyff-menu-close"
-        id="klyff-menu-close"
-        aria-label="Close menu"
-    >
-        ×
-    </button>
-
-    <a href="shop.html">
-        Shop
-    </a>
-
-    <a href="#about">
-        About
-    </a>
-
-    <a href="policy.html">
-        Store Information
-    </a>
-
-    <a href="#contact">
-        Contact
-    </a>
-
-    <a href="order-search.html">Track order</a>
-
-    <a href="account.html">
-        Account
-    </a>
-
-</aside>
-
-<main>
-
-    <!-- ========================================
-         DROP STAGES
-         Only the section matching <body data-stage> is visible.
-     ======================================== -->
-    <section class="stage stage-build">
-        <p class="eyebrow">01 — BUILD-UP</p>
-        <h2 class="stage-title">QUIET LINES.<br>PRECISE STRUCTURE.</h2>
-        <p class="stage-text">KLYFF is a contemporary fashion house built on fluid minimalism and architectural weight. Details unlock as the countdown moves.</p>
-        <div class="stage-countdown" role="timer" aria-label="Time until launch">
-            <div><b id="cd-d">00</b><span>DAYS</span></div>
-            <div><b id="cd-h">00</b><span>HRS</span></div>
-            <div><b id="cd-m">00</b><span>MIN</span></div>
-            <div><b id="cd-s">00</b><span>SEC</span></div>
+  <section id="skills">
+    <div class="wrap">
+      <h2><span class="en">Skills</span><span class="ar">المهارات</span></h2>
+      <p class="section-sub">
+        <span class="en">Tools I use to take a store from idea to launch.</span>
+        <span class="ar">الأدوات التي أستخدمها لإطلاق المتجر من الفكرة حتى النشر.</span>
+      </p>
+      <div class="skills">
+        <div>
+          <h4><span class="en">Storefronts</span><span class="ar">واجهات المتاجر</span></h4>
+          <ul>
+            <li><span class="en">HTML, CSS, and vanilla JavaScript</span><span class="ar">HTML وCSS وJavaScript</span></li>
+            <li><span class="en">Multi-page sites without frameworks</span><span class="ar">مواقع متعددة الصفحات بدون أطر عمل</span></li>
+            <li><span class="en">Admin panels with Arabic translations</span><span class="ar">لوحات تحكم مترجمة للعربية</span></li>
+          </ul>
         </div>
-        <p class="stage-soon" id="cd-soon"></p>
-        <div class="stage-teasers" id="stage-teasers"></div>
-        <form class="stage-notify" data-notify-form novalidate>
-            <label class="stage-notify-label" for="notify-email-2">GET AN EMAIL THE MOMENT IT'S LIVE</label>
-            <div class="stage-notify-row">
-                <input class="stage-notify-input" id="notify-email-2" type="email" name="email" placeholder="you@example.com" autocomplete="email" inputmode="email" required>
-                <button type="submit" class="stage-button">NOTIFY ME AT LAUNCH</button>
-            </div>
-            <input class="stage-notify-trap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <p class="stage-notify-message" role="status" aria-live="polite"></p>
-        </form>
-    </section>
+        <div>
+          <h4><span class="en">Backend</span><span class="ar">الخلفية</span></h4>
+          <ul>
+            <li>Node.js and Express 5</li>
+            <li>SQLite with better-sqlite3</li>
+            <li><span class="en">Email and image processing (Nodemailer, Sharp)</span><span class="ar">البريد الإلكتروني ومعالجة الصور</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4><span class="en">Payments and delivery</span><span class="ar">الدفع والتوصيل</span></h4>
+          <ul>
+            <li><span class="en">Cash on delivery flows</span><span class="ar">نظام الدفع عند الاستلام</span></li>
+            <li><span class="en">Paymob payment integration</span><span class="ar">تكامل Paymob للدفع</span></li>
+            <li><span class="en">Courier APIs and Google Sheets sync</span><span class="ar">واجهات شركات الشحن ومزامنة Google Sheets</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4><span class="en">Security</span><span class="ar">الأمان</span></h4>
+          <ul>
+            <li><span class="en">HMAC-verified payment callbacks</span><span class="ar">تحقق HMAC لإشعارات الدفع</span></li>
+            <li><span class="en">Rate limiting on public endpoints</span><span class="ar">تحديد معدل الطلبات للنقاط العامة</span></li>
+            <li><span class="en">Service account authentication</span><span class="ar">مصادقة حساب الخدمة</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="stage stage-reveal">
-        <p class="eyebrow">02 — REVEAL</p>
-        <h2 class="stage-title">QUIET LINES.<br>PRECISE STRUCTURE.</h2>
-        <p class="stage-text">Structured form, fluid drape. The collection is live.</p>
-        <div class="pc-grid" data-klyff-products data-limit="3" data-spread></div>
-        <a class="stage-button" href="shop.html">SHOP COLLECTION</a>
-    </section>
+  <section id="region">
+    <div class="wrap">
+      <h2><span class="en">Built for the region</span><span class="ar">مصمم للسوق المحلي</span></h2>
+      <p class="section-sub">
+        <span class="en">Features shaped by how shoppers in Egypt buy online.</span>
+        <span class="ar">ميزات مصممة وفق طريقة تسوق المصريين عبر الإنترنت.</span>
+      </p>
+      <div class="region">
+        <div>
+          <h4><span class="en">Cash on delivery</span><span class="ar">الدفع عند الاستلام</span></h4>
+          <p><span class="en">Pay when your order arrives, the most common way to buy online in Egypt.</span><span class="ar">ادفع عند وصول طلبك، وهي الطريقة الأكثر شيوعًا للتسوق عبر الإنترنت في مصر.</span></p>
+        </div>
+        <div>
+          <h4><span class="en">Delivery by governorate</span><span class="ar">التوصيل حسب المحافظة</span></h4>
+          <p><span class="en">Delivery fees set for each governorate, with courier connections by API or sheet sync.</span><span class="ar">رسوم توصيل محددة لكل محافظة، مع ربط شركات الشحن عبر واجهة برمجية أو مزامنة جدول.</span></p>
+        </div>
+        <div>
+          <h4><span class="en">Timed product drops</span><span class="ar">إصدارات محدودة بتوقيت</span></h4>
+          <p><span class="en">Teasers and a countdown before each collection opens for purchase.</span><span class="ar">تلميحات وعداد تنازلي قبل فتح كل مجموعة للشراء.</span></p>
+        </div>
+        <div>
+          <h4><span class="en">Arabic admin panel</span><span class="ar">لوحة تحكم بالعربية</span></h4>
+          <p><span class="en">The admin panel includes Arabic translations. The customer site is English only for now.</span><span class="ar">تتضمن لوحة التحكم ترجمة عربية. موقع العملاء بالإنجليزية فقط حاليًا.</span></p>
+        </div>
+        <div>
+          <h4><span class="en">Mobile first</span><span class="ar">الأولوية للجوال</span></h4>
+          <p><span class="en">Built for young shoppers who browse and buy on their phones.</span><span class="ar">مصمم للمتسوقين الشباب الذين يتصفحون ويشترون من هواتفهم.</span></p>
+        </div>
+        <div>
+          <h4><span class="en">Online payments next</span><span class="ar">الدفع الإلكتروني قريبًا</span></h4>
+          <p><span class="en">Paymob online payments are being set up alongside cash on delivery.</span><span class="ar">يجري إعداد الدفع الإلكتروني عبر Paymob إلى جانب الدفع عند الاستلام.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about">
+      <h2><span class="en">About</span><span class="ar">نبذة</span></h2>
+      <p class="section-sub"><span class="en">A short introduction for visitors.</span><span class="ar">مقدمة قصيرة للزوار.</span></p>
+      <p>
+        <span class="en">I'm an e-commerce web developer. I work on the whole store, from the storefront customers see to the orders, delivery, and payments behind it.</span>
+        <span class="ar">أنا مطوّر متاجر إلكترونية. أعمل على المتجر بكامله، من الواجهة التي يراها العملاء إلى الطلبات والتوصيل والمدفوعات خلفها.</span>
+      </p>
+      <p>
+        <span class="en">I focus on stores that load fast, handle payments safely, and are easy for the business team to run. I also use AI-assisted development tools to move faster.</span>
+        <span class="ar">أركز على متاجر تحمّل بسرعة، وتتعامل مع المدفوعات بأمان، وسهلة على فريق العمل في إدارتها. كما أستخدم أدوات التطوير المدعومة بالذكاء الاصطناعي لأسرع في العمل.</span>
+      </p>
+    </div>
+  </section>
 
-    <section
-        class="about"
-        id="about"
-    >
+  <section id="cv">
+    <div class="wrap">
+      <div class="cv">
+        <div>
+          <h2><span class="en">Curriculum vitae</span><span class="ar">السيرة الذاتية</span></h2>
+          <p><span class="en">Experience, education, and certifications in one page.</span><span class="ar">الخبرة والتعليم والشهادات في صفحة واحدة.</span></p>
+        </div>
+        <a class="btn primary" href="cv.pdf"><span class="en">Download CV</span><span class="ar">تحميل السيرة الذاتية</span></a>
+      </div>
+    </div>
+  </section>
 
-        <p class="eyebrow">
-            THE KLYFF PHILOSOPHY
-        </p>
-
-        <h2>
-    FLUID MINIMALISM.<br>ARCHITECTURAL WEIGHT.
-</h2>
-
-<p>
-    KLYFF is a contemporary fashion house built on the ledge, the drop and the open horizon. Clean vertical structure meets fabric that moves with the body. We avoid trends and loud labels, and build each piece around precision and restraint.
-</p>
-
-    </section>
-
-    
-    <!-- CONTACT -->
-
-    <section
-        class="contact"
-        id="contact"
-    >
-
-        <p class="eyebrow">
-            GET IN TOUCH
-        </p>
-
-        <h2>
-            Let's talk.
-        </h2>
-
-        <p>
-            Have a question about KLYFF or our collection?
-            We'd love to hear from you.
-        </p>
-
-        <a href="mailto:klyffeg@gmail.com">
-            klyffeg@gmail.com
-        </a>
-
-        <a href="tel:+201026867250">
-            +20 10 26867250
-        </a>
-
-    </section>
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2><span class="en">Contact</span><span class="ar">تواصل</span></h2>
+      <p class="section-sub"><span class="en">Open to freelance and full-time roles.</span><span class="ar">متاح للعمل الحر وبدوام كامل.</span></p>
+      <div class="big"><a href="mailto:eslamreda560@gmail.com">eslamreda560@gmail.com</a></div>
+      <div class="meta">
+        <a href="https://wa.me/201019281396"><span class="en">Chat on WhatsApp</span><span class="ar">راسلني على واتساب</span></a>
+      </div>
+    </div>
+  </section>
 
 </main>
 
-<!-- FOOTER -->
-
 <footer>
-
-    <p>
-        © 2026 KLYFF. All rights reserved.
-    </p>
-
+  <div class="wrap">
+    <span><span class="en">© 2026 Eslam Reda</span><span class="ar">© 2026 إسلام رضا</span></span>
+    <span><span class="en">Built with plain HTML and CSS</span><span class="ar">مبني بـ HTML وCSS</span></span>
+  </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  (function () {
+    var html = document.documentElement;
+    var btn = document.getElementById('langToggle');
+    function setLang(lang) {
+      html.setAttribute('lang', lang);
+      html.setAttribute('data-lang', lang);
+      html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      try { localStorage.setItem('portfolio-lang', lang); } catch (e) {}
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('portfolio-lang'); } catch (e) {}
+    setLang(saved === 'ar' ? 'ar' : 'en');
+    btn.addEventListener('click', function () {
+      setLang(html.getAttribute('data-lang') === 'ar' ? 'en' : 'ar');
+    });
+  })();
+</script>
 
-<script src="index-inline-2.js"></script>
-
-
-<script src="slideshow.js"></script>
-<script src="size-guide.js"></script>
-<script src="shop.js"></script>
-<script src="index-inline-3.js"></script>
-
-<script src="search.js"></script>
 </body>
-
 </html>
